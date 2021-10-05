@@ -7,6 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class MyBootApplication{
 	public static void main(String[] args) {
 		SpringApplication.run(MyBootApplication.class, args);
-		System.out.println("Updating Spring Boot For Gradle 1");
+		System.out.println("Updating Spring Boot For Gradle 2");
 	}
 }
