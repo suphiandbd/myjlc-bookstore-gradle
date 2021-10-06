@@ -1,0 +1,41 @@
+pipeline {
+    agent any
+    stages {
+  
+   stage('my-code-checkout') { 
+     steps {
+    //Task Here
+git branch:'jlcmaster',
+url: 'https://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git@github.com/suphiandbd/myjlc-bookstore-gradle.git'
+
+     echo "Checkout Completed Successfully..."
+     }
+    }
+
+    stage('my-code-compile') { 
+     steps {
+    //Task Here
+     sh 'gradle compileJava'	
+      echo "Compilation Completed Successfully..."
+     }
+    }
+
+  stage('my-unit-testing') { 
+  steps {
+     //Task Here
+    sh 'gradle test'	
+     echo "Unit Testing Completed Successfully..."
+     }
+    }
+
+  stage('my-code-packaging') { 
+  steps {
+     //Task Here
+  sh 'gradle build'	
+ echo "Packaing Completed Successfully..."
+     }
+    }
+
+ 
+    }
+}
