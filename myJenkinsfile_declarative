@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'myjlc-agent-1'}
+    agent any
     stages {
   
    stage('my-code-checkout') { 
@@ -12,27 +12,41 @@ url: 'https://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git@github.com/suphiandbd/
      }
     }
 
+
     stage('my-code-compile') { 
      steps {
     //Task Here
-     sh 'gradle compileJava'	
+      sh 'gradle compileJava'
       echo "Compilation Completed Successfully..."
      }
     }
 
+   stage('my-code-review') { 
+  steps {
+   //Task Here
+     echo "Code Review Completed Successfully..."
+     }
+    }
   stage('my-unit-testing') { 
   steps {
      //Task Here
-    sh 'gradle test'	
+     sh 'gradle test'
      echo "Unit Testing Completed Successfully..."
      }
     }
 
-  stage('my-code-packaging') { 
+   stage('my-code-coverage') { 
   steps {
      //Task Here
-  sh 'gradle build'	
- echo "Packaing Completed Successfully.."
+  echo "Code Coverage Completed Successfully..."
+     }
+    }
+
+ stage('my-code-packaging') { 
+  steps {
+     //Task Here
+     sh 'gradle build'
+ echo "Packaing Completed Successfully..."
      }
     }
 
