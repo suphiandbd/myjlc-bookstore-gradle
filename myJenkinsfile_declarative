@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'myjlc-agent-1'}
+    agent any
     stages {
   
    stage('my-code-checkout') { 
